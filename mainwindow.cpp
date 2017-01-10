@@ -34,6 +34,13 @@ void MainWindow::updateGameDrawing(){
     }
 }
 
+QAction *saveAct = new QAction( this );
+saveAct->setText( "Save" );
+saveAct->setIconSet( QPixmap("save.png") );
+connect( saveAct, SIGNAL(activated()), this, SLOT(save()) );
+saveAct->addTo( fileMenu );
+saveAct->addTo( toolbar );
+//设置一个“Save”菜单项和一个“Save”工具按钮
 
 void MainWindow::drawBody(PsyEntity *psyEntity){
 
